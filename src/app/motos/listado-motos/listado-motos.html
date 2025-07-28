@@ -1,0 +1,58 @@
+<app-listado-generico [listado]="moto">
+    <ng-container contenido>
+         <div class="peliculas-contenedor">
+            @for (moto of moto; track $index) {
+                <div class="pelicula-contenedor">
+                    <a>
+                        @if (moto.imagen) {
+                            <img [src]="moto.imagen" width="169" height="160">
+                        }
+                        @else {
+                            <img src="default.jpg" width="169" height="160">
+                        }
+                    </a>
+                    <p>
+                        <a> {{ moto.Marca}}</a>
+                    </p>
+                    <div>
+                        <a mat-flat-button > Editar </a>
+                        <button mat-flat-button type="button" class="warn">Borrar</button>
+                    </div>
+
+                </div>
+            }
+         </div>
+    </ng-container>
+</app-listado-generico>
+
+<!-- 
+<app-listado-generico [listado]="moto">
+    <ng-container contenido>
+        @for (moto of moto; track $index) {
+        <div class="container">
+
+            <div style="display: flex; flex-direction: row; gap: 10px;">
+                <div>
+                    @if (moto.imagen) {
+                    <img [src]="moto.imagen" height="200" width="315">
+                    } @else {
+                    <img src="default.jpg" height="200" width="315">
+                    }
+                </div>
+                <div>
+                    <p>{{moto.Marca}}</p>
+                    <p>{{moto.Cilindrada}}</p>
+                    <p>{{moto.Modelo}}</p>
+                    <p>{{moto.descripcion}}</p>
+                    <p>{{moto.precio | currency: 'USD'}}</p><br>
+                    <!-- <button mat-flat-button (click)="(eliminarMoto(moto))"><mat-icon>delete</mat-icon> Eliminar </button> 
+
+
+                </div>
+            </div>
+
+        </div>
+        }
+
+    </ng-container>
+</app-listado-generico> -->
