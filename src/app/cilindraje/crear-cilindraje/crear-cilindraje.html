@@ -1,1 +1,17 @@
-<h2>esta es la pagina de cilindraje</h2>
+<h2>Crear Cilindraje</h2>
+
+<form (submit)="guardarCambios()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControl]="form.controls.nombre" />
+        <mat-error>{{ obtenerErrorCampoNombre() }}</mat-error>
+    </mat-form-field>
+    <div class="contenedor-botones">
+        <button mat-flat-button type="button" (click)="guardarCambios()" [disabled]="form.invalid">guardar cambios</button>
+        
+        <a mat-stroked-button routerLink="/cilindrajes">Volver</a>
+    </div>
+
+</form>
+
