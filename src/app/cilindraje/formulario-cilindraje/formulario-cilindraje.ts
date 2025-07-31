@@ -1,5 +1,5 @@
-import { CilindrajeCrearDTO } from './../cilindraje';
-import { Component, EventEmitter, inject, NgModule, Output } from '@angular/core';
+import { CilindrajeCrearDTO, cilindrajeDTO } from './../cilindraje';
+import { Component, EventEmitter, inject, Input, NgModule, OnInit, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { primeraLetraMayuscula } from '../../compartidos/funciones/validaciones';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,14 @@ import { CrearCilindraje } from '../crear-cilindraje/crear-cilindraje';
   templateUrl: './formulario-cilindraje.html',
   styleUrl: './formulario-cilindraje.css'
 })
-export class FormularioCilindraje {
+export class FormularioCilindraje implements OnInit {
+  ngOnInit(): void {
+    if(this.modelo !== undefined)
+      this.form.patchValue(this.modelo);
+  }
+
+  @Input()
+  modelo?: cilindrajeDTO ;  
 
   @Output()
   posteoFormulario = new EventEmitter<CilindrajeCrearDTO>();

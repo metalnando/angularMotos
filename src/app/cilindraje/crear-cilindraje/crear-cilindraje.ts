@@ -9,7 +9,7 @@ import { FormularioCilindraje } from '../formulario-cilindraje/formulario-cilind
 
 @Component({
   selector: 'app-crear-cilindraje',
-  imports: [MatButtonModule, RouterLink, MatFormFieldModule, MatInputModule, ReactiveFormsModule, FormularioCilindraje],
+  imports: [MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, FormularioCilindraje],
   templateUrl: './crear-cilindraje.html',
   styleUrl: './crear-cilindraje.css'
 })
@@ -22,7 +22,7 @@ export class CrearCilindraje {
     // ... Guarda cambios
     //this.router.navigate(['/Motos']);
     //console.log(this.form.value)
-     console.log(cilindraje)
+     console.log("creando  el cilindraje", cilindraje);
   }
 
 }

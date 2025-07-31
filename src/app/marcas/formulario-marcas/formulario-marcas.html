@@ -1,0 +1,17 @@
+<form (submit)="guardarCambios()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControl]="form.controls.nombre" />
+        <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Fecha Creación </mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="form.controls.fechaCreacion"/>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+    <div class="contenedor-botones">
+        <button type="submit" mat-flat-button [disabled]="form.invalid">Guardar cambios</button>
+        <a mat-stroked-button routerLink="/marcas">Cancelar</a>
+    </div>
+</form>

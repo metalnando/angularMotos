@@ -8,7 +8,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ListadoMotos, Menu, Rating, MatButtonModule, RouterOutlet],
+  imports: [ Menu,  MatButtonModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
